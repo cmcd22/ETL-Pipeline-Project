@@ -1,0 +1,22 @@
+[
+  {
+    "city": "Auckland",
+    "lat": -36.85,
+    "lon": 174.76
+  },
+  {
+    "city": "Sydney",
+    "lat": -33.87,
+    "lon": 151.21
+  },
+  {
+    "city": "London",
+    "lat": 51.50,
+    "lon": -0.12
+  },
+  {
+    "city": "New_York",
+    "lat": 40.71,
+    "lon": -74.00
+  }
+]
