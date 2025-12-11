@@ -53,8 +53,8 @@ def upload_to_s3(data, city, ts):
 # Fetch weather data and upload to S3
 def fetch_and_upload(city_info):
     city = city_info["city"]
-    lat = city_info["lat"]
-    lon = city_info["lon"]
+    lat = city_info["latitude"]
+    lon = city_info["longitude"]
 
     url = build_url(lat, lon)
     logging.info(f"Fetching weather data for {city}: {url}")
