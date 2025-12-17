@@ -36,21 +36,25 @@ CSV Export (for Tableau Public)
 .
 ├── src/
 │   ├── extract/
-│   │   └── get_weather.py
+│   │   └── get_weather.py        # Bronze ingestion script
+│   │
 │   ├── transform/
-│   │   ├── silver_job.py
-│   │   └── gold_job.py
-│   └── utils/
-│       └── parquet_to_csv.py
+│   │   ├── aws_glue_bronze_to_silver_script.py         # Bronze → Silver Glue job
+│   │   └── aws_glue_silver_to_gold_script.py           # Silver → Gold Glue job
+│   │
+│   ├── utils/
+│   │   └── parquet_to_csv.py     # Export Gold Parquet → CSV
+│   │
+│   └── config/
+│       ├── cities.json           # City coordinates
+│       └── config.json           # Runtime configuration (non-secret)
 │
-├── config/
-│   ├── cities.json
-│   └── config.json
-│
-├── diagrams/
-│   └── architecture.png
+├── docs/
+│   └── aws_glue_workflow_visualisation.png          # Screenshot of workflow created in AWS Glue console
 │
 ├── README.md
+├── .gitignore
+└── requirements.txt
 ```
 
 ---
