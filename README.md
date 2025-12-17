@@ -36,21 +36,33 @@ CSV Export (for Tableau Public)
 .
 ├── src/
 │   ├── extract/
-│   │   └── get_weather.py        # Bronze ingestion script
+│   │   └── get_weather.py
+│   │       # Bronze ingestion script (Open-Meteo API → S3)
 │   │
 │   ├── transform/
-│   │   ├── aws_glue_bronze_to_silver_script.py         # Bronze → Silver Glue job
-│   │   └── aws_glue_silver_to_gold_script.py           # Silver → Gold Glue job
+│   │   ├── aws_glue_bronze_to_silver_script.py
+│   │   │   # Bronze → Silver AWS Glue job (hourly Parquet)
+│   │   └── aws_glue_silver_to_gold_script.py
+│   │       # Silver → Gold AWS Glue job (daily aggregates)
 │   │
 │   ├── utils/
-│   │   └── parquet_to_csv.py     # Export Gold Parquet → CSV
+│   │   └── parquet_to_csv.py
+│   │       # Export Gold Parquet → CSV for Tableau Public
 │   │
 │   └── config/
-│       ├── cities.json           # City coordinates
-│       └── config.json           # Runtime configuration (non-secret)
+│       ├── cities.json
+│       │   # City coordinates used for data extraction
+│       └── config.json
+│           # Runtime configuration (non-secret)
 │
 ├── docs/
-│   └── aws_glue_workflow_visualisation.png          # Screenshot of workflow created in AWS Glue console
+│   ├── tableau_screenshots/
+│   │   ├── rainfall_visualisation.png
+│   │   ├── temperature_trend_visualisation.png
+│   │   └── uv_exposure_heatmap.png
+│   │
+│   └── aws_glue_workflow_visualisation.png
+│       # Screenshot of AWS Glue Workflow orchestration
 │
 ├── README.md
 ├── .gitignore
